@@ -16,4 +16,6 @@ public class NumbConstant
 
 	public static final String URL_PROTOCOL_JAR = "jar";
 
+	public static final String CLASS_FILE_SUFFIX = ".class";
+
 }
