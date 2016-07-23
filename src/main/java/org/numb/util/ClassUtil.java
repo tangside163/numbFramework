@@ -20,7 +20,7 @@ import java.util.jar.JarFile;
  * @author tangsi
  * @version 1.0 Copyright (c) 2016/7/11 youku, All Rights Reserved.
  * @Project numbFramework
- * @Description:Àà¼ÓÔØ¹¤¾ßÀà
+ * @Description:ç±»åŠ è½½å·¥å…·ç±»
  * @Company youku
  * @Create 2016/7/11 16:17
  */
@@ -32,8 +32,8 @@ public class ClassUtil
 
 	/**
 	 * 
-	 * ·½·¨ÓÃÍ¾:¼ÓÔØÖ¸¶¨°üÏÂËùÓĞclassµ½jvmÖĞ <br>
-	 * ÊµÏÖ²½Öè: <br>
+	 * æ–¹æ³•ç”¨é€”:åŠ è½½æŒ‡å®šåŒ…ä¸‹æ‰€æœ‰classåˆ°jvmä¸­ <br>
+	 * å®ç°æ­¥éª¤: <br>
 	 *
 	 * @param packageName
 	 * @return
@@ -51,12 +51,12 @@ public class ClassUtil
 			{
 				URL url = urls.nextElement();
 				String protocol = url.getProtocol();
-				if (NumbConstant.URL_PROTOCOL_FILE.equals(protocol))// ¼ÓÔØÎÄ¼ş¼ĞÖĞµÄclass
+				if (NumbConstant.URL_PROTOCOL_FILE.equals(protocol))// åŠ è½½æ–‡ä»¶å¤¹ä¸­çš„class
 				{
 					File packageFile = new File(url.getFile());
 					addClass(clazzes, packageName, packageFile, classLoader);
 
-				} else if (NumbConstant.URL_PROTOCOL_JAR.equals(protocol)) // ´Ójar°üÖĞ¼ÓÔØÀà
+				} else if (NumbConstant.URL_PROTOCOL_JAR.equals(protocol)) // ä»jaråŒ…ä¸­åŠ è½½ç±»
 				{
 					JarURLConnection jarURLConnection = (JarURLConnection) url.openConnection();
 					JarFile jarFile = jarURLConnection.getJarFile();
@@ -77,7 +77,7 @@ public class ClassUtil
 			}
 		} catch (IOException e)
 		{
-			String errorMsg = "»ñÈ¡" + packagePath + "ÏÂµÄ×ÊÔ´Ê±·¢Éú´íÎó";
+			String errorMsg = "è·å–" + packagePath + "ä¸‹çš„èµ„æºæ—¶å‘ç”Ÿé”™è¯¯";
 			logger.error(errorMsg, e);
 			throw new FrameworkException(errorMsg, e);
 		}
@@ -87,8 +87,8 @@ public class ClassUtil
 
 	/**
 	 *
-	 * ·½·¨ÓÃÍ¾: µİ¹é¼ÓÔØÎÄ¼şÖĞµÄclass<br>
-	 * ÊµÏÖ²½Öè: <br>
+	 * æ–¹æ³•ç”¨é€”: é€’å½’åŠ è½½æ–‡ä»¶ä¸­çš„class<br>
+	 * å®ç°æ­¥éª¤: <br>
 	 *
 	 * @param clazzes
 	 * @param packageName
@@ -130,8 +130,8 @@ public class ClassUtil
 
 	/**
 	 * 
-	 * ·½·¨ÓÃÍ¾: <br>
-	 * ÊµÏÖ²½Öè: <br>
+	 * æ–¹æ³•ç”¨é€”: <br>
+	 * å®ç°æ­¥éª¤: <br>
 	 *
 	 * @return
 	 */
@@ -142,8 +142,8 @@ public class ClassUtil
 
 	/**
 	 * 
-	 * ·½·¨ÓÃÍ¾: ¸ù¾İÀàÈ«ÏŞ¶¨Ãû£¬¼ÓÔØ¸ÃÀàµ½jvmÖĞ²¢·µ»Ø¸ÃClass¶ÔÏó<br>
-	 * ÊµÏÖ²½Öè: <br>
+	 * æ–¹æ³•ç”¨é€”: æ ¹æ®ç±»å…¨é™å®šåï¼ŒåŠ è½½è¯¥ç±»åˆ°jvmä¸­å¹¶è¿”å›è¯¥Classå¯¹è±¡<br>
+	 * å®ç°æ­¥éª¤: <br>
 	 *
 	 * @param className
 	 * @param initialize
@@ -157,7 +157,7 @@ public class ClassUtil
 			return Class.forName(className, true, classLoader);
 		} catch (ClassNotFoundException e)
 		{
-			String errorMsg = "¼ÓÔØÀà:" + className + "Ê±·¢Éú´íÎó,¸ÃÀà" + className + "²»´æÔÚ";
+			String errorMsg = "åŠ è½½ç±»:" + className + "æ—¶å‘ç”Ÿé”™è¯¯,è¯¥ç±»" + className + "ä¸å­˜åœ¨";
 			logger.error(errorMsg, e);
 			throw new FrameworkException(errorMsg, e);
 		}

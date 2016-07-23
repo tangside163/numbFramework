@@ -1,4 +1,4 @@
-package org.numb.core;
+package org.numb.core.annotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -7,18 +7,16 @@ import java.lang.annotation.Target;
 
 /**
  * @author tangsi
- * @version 1.0 Copyright (c) 2016/7/12 youku, All Rights Reserved.
+ * @version 1.0 Copyright (c) 2016/07/17 youku, All Rights Reserved.
  * @Project numbFramework
  * @Description:
  * @Company youku
- * @Create 2016/7/12 15:04
+ * @Create 2016/07/17 23:06
  */
-
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
-public @interface Component
-{
+public @interface Controller {
 
-	public String value();
+    public String value() default "";
 
 }

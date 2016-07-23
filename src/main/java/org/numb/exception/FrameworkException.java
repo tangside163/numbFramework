@@ -14,8 +14,8 @@ public class FrameworkException extends RuntimeException
 
 	/**
 	 * 
-	 * ·½·¨ÓÃÍ¾: <br>
-	 * ÊµÏÖ²½Öè: <br>
+	 * æ–¹æ³•ç”¨é€”: <br>
+	 * å®žçŽ°æ­¥éª¤: <br>
 	 *
 	 * @param msg
 	 * @param e
