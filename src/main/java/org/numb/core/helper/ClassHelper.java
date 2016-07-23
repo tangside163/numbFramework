@@ -56,7 +56,7 @@ public class ClassHelper {
     }
 
     /**
-     * 获取所有被IOC扫描到的类
+     * 获取所有被IOC容器扫描到的类
      *
      * @return
      */
